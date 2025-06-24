@@ -2,7 +2,7 @@ services:
   - type: web
     name: tsm-portfolio
     runtime: python
-    buildCommand: ""
+    buildCommand: "./build.sh"
     startCommand: gunicorn tsm_portfolio.wsgi:application
     envVars:
       - key: DJANGO_SETTINGS_MODULE
