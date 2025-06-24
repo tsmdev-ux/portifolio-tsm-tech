@@ -86,6 +86,7 @@ USE_TZ = True
 
 # Arquivos estáticos
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # <- importante pro Render
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'main/static')]
 
 # Campo padrão
