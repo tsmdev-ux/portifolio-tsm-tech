@@ -6,8 +6,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Configuração básica
 SECRET_KEY = 'django-insecure-(w0h7&tlo=^gu7@t0@(0_iidz#(drj5l7j&ei=spfidvwq*xt6'
-DEBUG = True
-ALLOWED_HOSTS = []
+DEBUG = os.getenv('RENDER', None) is None  # debug false em produção
+ALLOWED_HOSTS = ['*']
 
 # Aplicações instaladas
 INSTALLED_APPS = [
@@ -90,3 +90,9 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'main/static')]
 
 # Campo padrão
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+# Static files para o Render
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
