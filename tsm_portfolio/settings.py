@@ -4,6 +4,8 @@ import os
 # Caminho base do projeto
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+STATIC_URL = '/static/'
+
 # Configuração básica
 SECRET_KEY = 'django-insecure-(w0h7&tlo=^gu7@t0@(0_iidz#(drj5l7j&ei=spfidvwq*xt6'
 DEBUG = os.getenv('RENDER', None) is None  # debug false em produção
@@ -94,6 +96,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 
-# Static files para o Render
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 
