@@ -1,0 +1,9 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Adicionais */
+body {
+    font-family: 'Segoe UI', sans-serif;
+}

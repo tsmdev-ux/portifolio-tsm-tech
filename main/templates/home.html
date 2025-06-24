@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="flex flex-col-reverse md:flex-row items-center justify-between gap-8 mt-12">
+    <div class="text-left md:w-1/2">
+        <h1 class="text-5xl font-extrabold mb-4 text-yellow-400">
+            Tiago Miranda
+        </h1>
+        <p class="text-xl text-gray-300 mb-6 leading-relaxed">
+            Desenvolvedor Full Stack focado em transformar ideias em soluções reais, eficientes e seguras. Tenho experiência sólida com Django, Python, JavaScript, SQL, além de forte domínio em banco de dados relacionais e não-relacionais, modelagem de dados e otimização de consultas.
+
+Trabalho com tecnologias modernas para criar sistemas completos, escaláveis e bem estruturados. Sou movido por desafios, aprendizado contínuo e a vontade de contribuir com projetos que geram impacto real.
+
+Acredito que tecnologia bem aplicada pode melhorar processos, conectar pessoas e resolver problemas de forma inteligente. Meu foco é entregar valor com código limpo, soluções eficazes e desenvolvimento com propósito.
+        </p>
+        <div class="flex flex-wrap gap-4">
+            <a href="/static/CV_TiagoMiranda.pdf"
+               class="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-5 py-2 rounded transition duration-300">
+                📄 Baixar CV
+            </a>
+            <a href="https://github.com/seu-usuario" target="_blank"
+               class="border border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black font-semibold px-5 py-2 rounded transition duration-300">
+                🔗 GitHub
+            </a>
+        </div>
+    </div>
+
+    <div class="md:w-1/2 flex justify-center">
+        <img src="/static/avatar.png" alt="Avatar"
+             class="w-60 h-60 rounded-full border-4 border-yellow-500 shadow-lg hover:scale-105 transition duration-300">
+    </div>
+</section>
+{% endblock %}

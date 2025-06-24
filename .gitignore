@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.sqlite3
+
+# Django
+*.log
+db.sqlite3
+*.pot
+*.pyc
+.env
+
+# VSCode / IDEs
+.vscode/
+.idea/
+
+# Static / media
+staticfiles/
+media/
+
+# Node/Tailwind (caso use no futuro)
+node_modules/
