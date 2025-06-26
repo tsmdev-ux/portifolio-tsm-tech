@@ -80,7 +80,7 @@ USE_TZ = True
 
 # Arquivos estáticos (CSS, JS, imagens fixas)
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  # Pasta que você usa no projeto
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static/img')]  # Pasta que você usa no projeto
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')    # Onde o collectstatic salva no deploy
 
 # Arquivos de mídia (upload de imagens, etc)
