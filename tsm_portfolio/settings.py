@@ -5,9 +5,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-*7wzr&qh!^pni4%q2rrimcqqzn5z2cm9nqi48s2*z9-9-_(ah3'
 
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -79,11 +79,9 @@ USE_I18N = True
 USE_TZ = True
 
 # Arquivos estáticos (CSS, JS, imagens fixas)
-STATIC_URL = '/static/img/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  # Pasta que você usa no projeto
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')    # Onde o collectstatic salva no deploy
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Pasta que será gerada pelo collectstatic
 
-# Arquivos de mídia (upload de imagens, etc)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
