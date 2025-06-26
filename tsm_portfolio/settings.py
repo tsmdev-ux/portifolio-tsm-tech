@@ -79,7 +79,7 @@ USE_I18N = True
 USE_TZ = True
 
 # Arquivos estáticos (CSS, JS, imagens fixas)
-STATIC_URL = '/static/'
+STATIC_URL = '/static/img/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  # Pasta que você usa no projeto
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')    # Onde o collectstatic salva no deploy
 
