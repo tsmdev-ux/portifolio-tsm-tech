@@ -1,17 +1,14 @@
 from pathlib import Path
 import os
 
-# Caminho base do projeto
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-STATIC_URL = '/static/'
+SECRET_KEY = 'django-insecure-*7wzr&qh!^pni4%q2rrimcqqzn5z2cm9nqi48s2*z9-9-_(ah3'
 
-# Configuração básica
-SECRET_KEY = 'django-insecure-(w0h7&tlo=^gu7@t0@(0_iidz#(drj5l7j&ei=spfidvwq*xt6'
-DEBUG = os.getenv('RENDER', None) is None  # debug false em produção
-ALLOWED_HOSTS = ['*']
+DEBUG = True
 
-# Aplicações instaladas
+ALLOWED_HOSTS = []
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -19,10 +16,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'main',  # Seu app
+    'core',  # sua app principal
 ]
 
-# Middlewares
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -33,18 +29,15 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-# URL principal
-ROOT_URLCONF = 'tsm_portfolio.urls'
+ROOT_URLCONF = 'portfolio_tsm.urls'
 
-# Templates
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'main/templates')],
+        'DIRS': [],  # Use se quiser templates fora das apps
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
-                'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
@@ -53,10 +46,8 @@ TEMPLATES = [
     },
 ]
 
-# WSGI
-WSGI_APPLICATION = 'tsm_portfolio.wsgi.application'
+WSGI_APPLICATION = 'portfolio_tsm.wsgi.application'
 
-# Banco de dados SQLite
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -64,7 +55,6 @@ DATABASES = {
     }
 }
 
-# Validações de senha
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -80,21 +70,29 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-# Internacionalização
-LANGUAGE_CODE = 'pt-br'
-TIME_ZONE = 'America/Sao_Paulo'
+LANGUAGE_CODE = 'en-us'
+
+TIME_ZONE = 'UTC'
+
 USE_I18N = True
+
 USE_TZ = True
 
-# Arquivos estáticos
+# Arquivos estáticos (CSS, JS, imagens fixas)
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # <- importante pro Render
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'main/static')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  # Pasta que você usa no projeto
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')    # Onde o collectstatic salva no deploy
 
-# Campo padrão
+# Arquivos de mídia (upload de imagens, etc)
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
-
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# Configurações de e-mail (exemplo Gmail)
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'tiagosm2019@gmail.com'
+EMAIL_HOST_PASSWORD = 'sgnc pcyc aeyo eunh'
