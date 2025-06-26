@@ -81,7 +81,9 @@ USE_TZ = True
 
 # Arquivos estáticos (CSS, JS, imagens fixas)
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Pasta que será gerada pelo collectstatic
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  # <-- aponta para a pasta /static/
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
