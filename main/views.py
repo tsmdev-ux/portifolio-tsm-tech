@@ -15,7 +15,7 @@ def projetos(request):
             'titulo': 'Controle de Instrutores',
             'descricao': 'Sistema para autoescola com controle de entrada/saída, leitura de placa e impressão de tickets.',
             'tecnologias': ['Django', 'SQLite', 'Bootstrap', 'Tailwind', 'Postgres'],
-            'imagem': '/static/img/controle_instrutores.png',  # opcional
+            'imagem': '/static/img/controle_instrutores.JPG',  # opcional
             'seguranca': 'Acesso restrito via login, proteção CSRF, e integração futura com câmera de segurança.',
             'link': 'https://github.com/tiagomiranda/controle-instrutores'
         },
