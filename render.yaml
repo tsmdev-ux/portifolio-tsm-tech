@@ -3,10 +3,10 @@ services:
     name: tsm-portfolio
     runtime: python
     buildCommand: "./build.sh"
-    startCommand: gunicorn portfolio_tsm.wsgi:application
+    startCommand: gunicorn tsm_portfolio.wsgi:application
     staticPublishPath: staticfiles
     envVars:
       - key: DJANGO_SETTINGS_MODULE
-        value: portfolio_tsm.settings
+        value: tsm_portfolio.settings
       - key: PYTHON_VERSION
         value: 3.11.8
